@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Custom colors from design */
+  --travel-blue: hsl(207, 90%, 54%);
+  --success-green: hsl(147, 66%, 41%);
+  --warm-orange: hsl(35, 92%, 47%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  
+  /* Custom colors for dark mode */
+  --travel-blue: hsl(207, 90%, 54%);
+  --success-green: hsl(147, 66%, 41%);
+  --warm-orange: hsl(35, 92%, 47%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .travel-blue {
+    color: hsl(207, 90%, 54%);
+  }
+  
+  .bg-travel-blue {
+    background-color: hsl(207, 90%, 54%);
+  }
+  
+  .success-green {
+    color: hsl(147, 66%, 41%);
+  }
+  
+  .bg-success-green {
+    background-color: hsl(147, 66%, 41%);
+  }
+  
+  .warm-orange {
+    color: hsl(35, 92%, 47%);
+  }
+  
+  .bg-warm-orange {
+    background-color: hsl(35, 92%, 47%);
+  }
+  
+  .border-travel-blue {
+    border-color: hsl(207, 90%, 54%);
+  }
+  
+  .border-success-green {
+    border-color: hsl(147, 66%, 41%);
+  }
+  
+  .border-warm-orange {
+    border-color: hsl(35, 92%, 47%);
+  }
+  
+  .hover\:bg-blue-50:hover {
+    background-color: hsl(207, 100%, 97%);
+  }
+  
+  .hover\:bg-green-50:hover {
+    background-color: hsl(147, 100%, 97%);
+  }
+  
+  .hover\:bg-orange-50:hover {
+    background-color: hsl(35, 100%, 97%);
+  }
+
+  /* Compact form styling */
+  .compact-form input,
+  .compact-form textarea,
+  .compact-form [role="combobox"] {
+    height: 2rem !important;
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  .compact-form label {
+    font-size: 0.75rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .compact-form .space-y-4 > * + * {
+    margin-top: 0.5rem !important;
+  }
+
+  .compact-form .gap-4 {
+    gap: 0.5rem !important;
+  }
+
+  .compact-form .card-content {
+    padding: 0.75rem !important;
+  }
+
+  .compact-form .card-header {
+    padding: 0.75rem 0.75rem 0.5rem 0.75rem !important;
+  }
+
+  .compact-form .card-title {
+    font-size: 1rem !important;
+  }
+
+  .compact-form .card-description {
+    font-size: 0.75rem !important;
+  }
+
+  .compact-form button {
+    height: 2rem !important;
+    padding: 0.25rem 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  .compact-form .btn-sm {
+    height: 1.75rem !important;
+    padding: 0.125rem 0.5rem !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .hover\:bg-red-50:hover {
+    background-color: hsl(0, 100%, 97%);
+  }
+  
+  .hover\:bg-purple-50:hover {
+    background-color: hsl(270, 100%, 97%);
+  }
+
+  /* Mobile-friendly optimizations */
+  @media (max-width: 768px) {
+    /* Prevent text size adjustments on orientation change */
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    
+    /* Improve touch targets - minimum 44px per Apple HIG */
+    button, 
+    [role="button"], 
+    input[type="button"], 
+    input[type="submit"], 
+    .touch-target {
+      min-height: 44px;
+    }
+    
+    /* Better touch scrolling */
+    .scrollable {
+      -webkit-overflow-scrolling: touch;
+      overflow-scrolling: touch;
+    }
+    
+    /* Prevent zoom on input focus */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="url"],
+    textarea,
+    select {
+      font-size: 16px;
+    }
+  }
+
+  /* Touch-friendly animations */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  .active\:scale-95:active {
+    transform: scale(0.95);
+  }
+
+  .active\:scale-98:active {
+    transform: scale(0.98);
+  }
+
+  .active\:bg-gray-50:active {
+    background-color: rgb(249 250 251);
+  }
+}
